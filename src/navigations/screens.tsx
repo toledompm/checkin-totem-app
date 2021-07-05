@@ -41,6 +41,7 @@ export const Screens = [
     opts: {
       headerTitle: ScreenReference.CHECKIN,
       headerStyle: mainHeaderStyle.container,
+      headerTitleAlign: 'center',
       headerTintColor: colors.main,
       animationEnabled: true,
     },
@@ -51,6 +52,7 @@ export const Screens = [
     opts: {
       headerTitle: ScreenReference.SETTINGS,
       headerStyle: mainHeaderStyle.container,
+      headerTitleAlign: 'center',
       headerTintColor: colors.main,
       animationEnabled: true,
     },

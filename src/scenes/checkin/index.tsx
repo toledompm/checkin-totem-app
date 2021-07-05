@@ -7,8 +7,8 @@ import { mainSceneStyle } from 'styles';
 function checkin({ navigation }: ScreenProps): JSX.Element {
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () =>
-        navigationButton('settings', () =>
+      headerLeft: () =>
+        navigationButton('bars', () =>
           navigation.navigate(ScreenReference.SETTINGS),
         ),
     });
