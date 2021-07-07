@@ -4,8 +4,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors } from 'styles';
 import { ButtonStyle, mainButtonStyle, navButtonStyle } from 'styles/buttons';
 
-export function mainButton(title: string, onPress: () => void) {
-  return customButtonWithTitle(title, onPress, mainButtonStyle);
+export function mainButton(
+  title: string,
+  onPress: () => void,
+  extraProps?: Partial<ButtonStyle>,
+) {
+  return customButtonWithTitle(title, onPress, {
+    container: { ...mainButtonStyle.container, ...extraProps?.container },
+    text: { ...mainButtonStyle.text, ...extraProps?.text },
+  });
 }
 
 export function navigationButton(icon: string, onPress: () => void) {

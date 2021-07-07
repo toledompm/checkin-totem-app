@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import { colors } from 'styles';
 
 export type ButtonStyle = {
@@ -6,7 +5,7 @@ export type ButtonStyle = {
   text: Record<string, any>;
 };
 
-export const mainButtonStyle: ButtonStyle = StyleSheet.create({
+export const mainButtonStyle: ButtonStyle = {
   container: {
     elevation: 8,
     backgroundColor: colors.contrast,
@@ -22,9 +21,9 @@ export const mainButtonStyle: ButtonStyle = StyleSheet.create({
     alignSelf: 'center',
     textTransform: 'uppercase',
   },
-});
+};
 
-export const navButtonStyle: ButtonStyle = StyleSheet.create({
+export const navButtonStyle: ButtonStyle = {
   container: {
     elevation: 8,
     backgroundColor: colors.contrast,
@@ -40,4 +39,4 @@ export const navButtonStyle: ButtonStyle = StyleSheet.create({
     alignSelf: 'center',
     textTransform: 'uppercase',
   },
-});
+};
