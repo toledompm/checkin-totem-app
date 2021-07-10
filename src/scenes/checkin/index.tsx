@@ -1,22 +1,12 @@
-import { mainButton, navigationButton } from 'components/buttons';
-import { ScreenProps, ScreenReference } from 'navigations';
+import { mainButton } from 'components/buttons';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { mainSceneStyle } from 'styles';
 
-function checkin({ navigation }: ScreenProps): JSX.Element {
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () =>
-        navigationButton('bars', () =>
-          navigation.navigate(ScreenReference.SETTINGS),
-        ),
-    });
-  }, [navigation]);
-
+function checkin(): JSX.Element {
   return (
     <SafeAreaView style={mainSceneStyle.container}>
-      {mainButton('check-in', () => console.log('check-in'))}
+      {mainButton('check-in', () => undefined)}
     </SafeAreaView>
   );
 }

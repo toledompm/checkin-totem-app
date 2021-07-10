@@ -1,8 +1,5 @@
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import {
-  createStackNavigator,
-  StackNavigationProp,
-} from '@react-navigation/stack';
 import checkin from 'scenes/checkin';
 import settings from 'scenes/settings';
 import { colors, mainHeaderStyle } from 'styles';
@@ -17,20 +14,11 @@ type RootStackParamList = {
   Settings: undefined;
 };
 
-type ProfileScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  ScreenReference.CHECKIN
->;
-
-export type ScreenProps = {
-  navigation: ProfileScreenNavigationProp;
-};
-
 export const Stack = createStackNavigator<RootStackParamList>();
 
 type ScreenConfig = {
   name: ScreenReference;
-  component: (props: ScreenProps) => JSX.Element;
+  component: () => JSX.Element;
   opts: Record<string, any>;
 };
 
