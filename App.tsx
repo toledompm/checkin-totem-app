@@ -6,17 +6,17 @@ import registration from 'scenes/registration';
 import { getApiUrl } from 'utils/store';
 import { useState } from 'react';
 
+async function fetchUrl(setApiUrl: React.Dispatch<React.SetStateAction<string>>): Promise<void> {
+  const foundApiUrl = await getApiUrl();
+  if (foundApiUrl) {
+    setApiUrl(foundApiUrl);
+  }
+}
+
 function getScreenToRender() {
   const [apiUrl, setApiUrl] = useState('');
 
-  const fetchUrl = async () => {
-    const apiUrl = await getApiUrl();
-    if (apiUrl) {
-      setApiUrl(apiUrl);
-    }
-  }
-
-  fetchUrl();
+  fetchUrl(setApiUrl);
   return (apiUrl !== '' ? navigation() : registration());
 }
 
