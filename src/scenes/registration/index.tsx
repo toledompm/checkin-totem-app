@@ -13,19 +13,17 @@ import { mainButton } from 'components/buttons';
 function registration() {
   return (
     <SafeAreaView style={mainSceneStyle.container}>
-      <View style={{ flex: 1, alignItems: 'center' }}>
+      <View style={{ flex: 1, alignItems: 'center', alignSelf: 'stretch' }}>
         <Icon
           name={'qrcode'}
           size={150}
           color={colors.contrast}
-          style={{ marginTop: 100 }}
+          style={{ marginTop: 200 }}
         />
         <Text style={titleTextStyle}>check-in totem</Text>
       </View>
-
-      <View style={{ flex: 1, alignItems: 'center' }}>
+      <View style={{ flex: 1, alignItems: 'center', alignSelf: 'stretch' }}>
         <Input placeholder="www.api-url.com" style={simpleInputStyle} />
-
         {mainButton(
           'Login',
           () => {

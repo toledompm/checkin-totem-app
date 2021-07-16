@@ -12,6 +12,7 @@ module.exports = function (api) {
             navigations: "./src/navigations",
             components: "./src/components",
             assets: "./src/assets",
+            utils: "./src/utils",
           },
         },
       ],

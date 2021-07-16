@@ -1,1 +1,3 @@
-export * from 'navigations/screens';
+import { navigation } from 'navigations/navigationBar';
+
+export default navigation;
