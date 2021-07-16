@@ -9,7 +9,7 @@ import { useState } from 'react';
 function getScreenToRender() {
   const [apiUrl, setApiUrl] = useState('');
 
-  async function fetchUrl() {
+  const fetchUrl = async () => {
     const apiUrl = await getApiUrl();
     if (apiUrl) {
       setApiUrl(apiUrl);
