@@ -12,7 +12,7 @@ function checkin(): JSX.Element {
           name={'qrcode'}
           size={150}
           color={colors.contrast}
-          style={{marginTop: 200}}
+          style={{marginTop: 180}}
         />
       </View>
       <View style={{flex:1, alignSelf: 'stretch'}}>

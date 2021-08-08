@@ -41,7 +41,7 @@ function CustomNavigationBar({ navigation, previous }: StackHeaderProps) {
   );
 }
 
-export function navigation(): JSX.Element {
+export function navigation(apiUrl: string): JSX.Element {
   return (
     <Provider>
       <NavigationContainer>

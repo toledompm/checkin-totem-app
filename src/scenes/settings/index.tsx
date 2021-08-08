@@ -1,11 +1,16 @@
+import { mainButton } from 'components/buttons';
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import { mainSceneStyle } from 'styles';
 
 function settings() {
   return (
     <SafeAreaView style={mainSceneStyle.container}>
-      <Text> Why is it not importing :cry-cat: </Text>
+      <View style={{flex:1, alignSelf: 'stretch'}}>
+      </View>
+      <View style={{flex:1, alignSelf: 'stretch'}}>
+      {mainButton('logout', () => undefined)}
+      </View>
     </SafeAreaView>
   );
 }
