@@ -10,8 +10,8 @@ export enum ScreenReference {
 }
 
 type RootStackParamList = {
-  CheckIn: undefined;
-  Settings: undefined;
+  [ScreenReference.CHECKIN]: undefined;
+  [ScreenReference.SETTINGS]: undefined;
 };
 
 export const Stack = createStackNavigator<RootStackParamList>();

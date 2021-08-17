@@ -3,11 +3,25 @@ import 'react-native-gesture-handler';
 
 import navigation from 'navigations';
 import { useEffect, useState } from 'react';
+import login from 'scenes/login';
 import registerUrl from 'scenes/registration';
-import { getApiUrl } from 'utils/store';
+import { getApiUrl, getUserToken } from 'utils/store';
 
 export default function App() {
   const [url, setUrl] = useState('');
-  useEffect(() => {getApiUrl(setUrl)}, []);
-  return url ? navigation(url) : registerUrl(setUrl);  
+  const [userToken, setUserToken] = useState('');
+  useEffect(() => {
+    getApiUrl(setUrl);
+    getUserToken(setUserToken);
+  }, []);
+
+  if (!url) {
+    return registerUrl(setUrl);
+  }
+
+  if (!userToken) {
+    return login(url, setUserToken);
+  }
+
+  return navigation(url, userToken);
 }

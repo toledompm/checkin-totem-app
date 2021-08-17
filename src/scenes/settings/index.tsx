@@ -1,6 +1,6 @@
 import { mainButton } from 'components/buttons';
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { mainSceneStyle } from 'styles';
 
 function settings() {
