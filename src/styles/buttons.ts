@@ -23,6 +23,26 @@ export const mainButtonStyle: ButtonStyle = {
   },
 };
 
+export const alternateButtonStyle: ButtonStyle = {
+  container: {
+    elevation: 8,
+    backgroundColor: colors.main,
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    margin: 10,
+    alignSelf: 'stretch',
+    borderWidth: 1,
+    borderColor: colors.contrast,
+  },
+  text: {
+    fontSize: 18,
+    color: colors.contrast,
+    alignSelf: 'center',
+    textTransform: 'uppercase',
+  },
+};
+
 export const navButtonStyle: ButtonStyle = {
   container: {
     elevation: 8,

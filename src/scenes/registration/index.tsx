@@ -16,7 +16,7 @@ function registerUrl(setUrl: React.Dispatch<React.SetStateAction<string>>) {
 
   const loginBtnCallback = async () => {
     storeApiUrl(urlInput, setUrl);
-  }
+  };
 
   return (
     <SafeAreaView style={mainSceneStyle.container}>
@@ -29,11 +29,19 @@ function registerUrl(setUrl: React.Dispatch<React.SetStateAction<string>>) {
         />
         <Text style={titleTextStyle}>check-in totem</Text>
       </View>
-      <View style={{ flex: 1, alignItems: 'center', alignSelf: 'stretch', marginTop: 50 }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          alignSelf: 'stretch',
+          marginTop: 50,
+        }}
+      >
         <Input
           placeholder="www.api-url.com"
           style={simpleInputStyle}
-          onChangeText={(text: string) => urlInput = text}
+          onChangeText={(text: string) => (urlInput = text)}
+          defaultValue=""
         />
         {mainButton('Login', loginBtnCallback, {
           container: { marginTop: 30 },

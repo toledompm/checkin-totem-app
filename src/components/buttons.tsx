@@ -2,7 +2,12 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors } from 'styles';
-import { ButtonStyle, mainButtonStyle, navButtonStyle } from 'styles/buttons';
+import {
+  alternateButtonStyle,
+  ButtonStyle,
+  mainButtonStyle,
+  navButtonStyle,
+} from 'styles/buttons';
 
 export function mainButton(
   title: string,
@@ -12,6 +17,17 @@ export function mainButton(
   return customButtonWithTitle(title, onPress, {
     container: { ...mainButtonStyle.container, ...extraProps?.container },
     text: { ...mainButtonStyle.text, ...extraProps?.text },
+  });
+}
+
+export function alternateButton(
+  title: string,
+  onPress: () => void,
+  extraProps?: Partial<ButtonStyle>,
+) {
+  return customButtonWithTitle(title, onPress, {
+    container: { ...alternateButtonStyle.container, ...extraProps?.container },
+    text: { ...alternateButtonStyle.text, ...extraProps?.text },
   });
 }
 
