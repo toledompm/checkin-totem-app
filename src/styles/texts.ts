@@ -8,6 +8,7 @@ export const simpleInputStyle = {
   height: 35,
   textAlign: TextAlignOptions.CENTER,
   paddingLeft: 6,
+  marginTop: 10,
   color: colors.contrast,
 };
 
