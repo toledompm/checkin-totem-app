@@ -5,14 +5,25 @@ import navigation from 'navigations';
 import { useEffect, useState } from 'react';
 import login from 'scenes/login';
 import registerUrl from 'scenes/registration';
-import { getApiUrl, getUserToken } from 'utils/store';
+import * as Store from 'utils/store';
 
 export default function App() {
   const [url, setUrl] = useState('');
   const [userToken, setUserToken] = useState('');
+
+  const getApiUrl = async () => {
+    const url = await Store.getApiUrl();
+    setUrl(url);
+  };
+
+  const getUserToken = async () => {
+    const token = await Store.getUserToken();
+    setUserToken(token);
+  };
+
   useEffect(() => {
-    getApiUrl(setUrl);
-    getUserToken(setUserToken);
+    getApiUrl();
+    getUserToken();
   }, []);
 
   if (!url) {

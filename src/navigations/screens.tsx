@@ -22,33 +22,36 @@ type ScreenConfig = {
   opts: Record<string, any>;
 };
 
-export const Screens = [
-  {
-    name: ScreenReference.CHECKIN,
-    component: checkin,
-    opts: {
-      headerTitle: ScreenReference.CHECKIN,
-      headerStyle: mainHeaderStyle.container,
-      headerTitleAlign: 'center',
-      headerTintColor: colors.main,
-      animationEnabled: true,
-    },
-  },
-  {
-    name: ScreenReference.SETTINGS,
-    component: settings,
-    opts: {
-      headerTitle: ScreenReference.SETTINGS,
-      headerStyle: mainHeaderStyle.container,
-      headerTitleAlign: 'center',
-      headerTintColor: colors.main,
-      animationEnabled: true,
-    },
-  },
-].map((config) => buildScreen(config));
 
-function buildScreen({ name, component, opts }: ScreenConfig) {
+function buildScreen({ name, component, opts }: ScreenConfig): JSX.Element {
   return (
     <Stack.Screen name={name} component={component} options={opts} key={name} />
   );
 }
+
+export function screens(url: string, userToken: string): JSX.Element[] {
+  return [
+    {
+      name: ScreenReference.CHECKIN,
+      component: () => checkin(url, userToken),
+      opts: {
+        headerTitle: ScreenReference.CHECKIN,
+        headerStyle: mainHeaderStyle.container,
+        headerTitleAlign: 'center',
+        headerTintColor: colors.main,
+        animationEnabled: true,
+      },
+    },
+    {
+      name: ScreenReference.SETTINGS,
+      component: () => settings(),
+      opts: {
+        headerTitle: ScreenReference.SETTINGS,
+        headerStyle: mainHeaderStyle.container,
+        headerTitleAlign: 'center',
+        headerTintColor: colors.main,
+        animationEnabled: true,
+      },
+    },
+  ].map((config) => buildScreen(config));
+};
