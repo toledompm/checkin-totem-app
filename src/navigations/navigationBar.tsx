@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StackHeaderProps } from '@react-navigation/stack';
 import { navigationButton } from 'components/buttons';
-import { ScreenReference, Screens, Stack } from 'navigations/screens';
+import { ScreenReference, screens, Stack } from 'navigations/screens';
 import React, { useState } from 'react';
 import { Appbar, Menu, Provider } from 'react-native-paper';
 import { mainHeaderStyle } from 'styles';
@@ -41,7 +41,7 @@ function CustomNavigationBar({ navigation, previous }: StackHeaderProps) {
   );
 }
 
-export function navigation(userToken: string, apiUrl: string): JSX.Element {
+export function navigation(apiUrl: string, userToken: string): JSX.Element {
   return (
     <Provider>
       <NavigationContainer>
@@ -53,7 +53,7 @@ export function navigation(userToken: string, apiUrl: string): JSX.Element {
             ),
           }}
         >
-          {Screens}
+          {screens(apiUrl, userToken)}
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

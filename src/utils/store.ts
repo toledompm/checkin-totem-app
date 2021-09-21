@@ -11,11 +11,8 @@ export async function storeApiUrl(
   setUrl(url);
 }
 
-export async function getApiUrl(
-  setUrl: React.Dispatch<React.SetStateAction<string>>,
-): Promise<void> {
-  const url = await get(API_URL_KEY);
-  setUrl(url);
+export function getApiUrl(): Promise<string> {
+  return get(API_URL_KEY);
 }
 
 export async function storeUserToken(
@@ -26,11 +23,8 @@ export async function storeUserToken(
   setUserToken(userToken);
 }
 
-export async function getUserToken(
-  setUserToken: React.Dispatch<React.SetStateAction<string>>,
-): Promise<void> {
-  const userToken = await get(USER_TOKEN_KEY);
-  setUserToken(userToken);
+export function getUserToken(): Promise<string> {
+  return get(USER_TOKEN_KEY);
 }
 
 async function store(key: string, data: any): Promise<void> {
