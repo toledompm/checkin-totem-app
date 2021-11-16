@@ -7,7 +7,7 @@ import {
   colors,
   mainSceneStyle,
   simpleInputStyle,
-  titleTextStyle,
+  titleTextStyle
 } from 'styles';
 import { storeUserToken } from 'utils/store';
 
@@ -39,8 +39,9 @@ function login(
           name={'qrcode'}
           size={150}
           color={colors.contrast}
-          style={{ marginTop: 130 }}
+          style={{ marginTop: 180 }}
         />
+        <Text style={titleTextStyle}>check-in totem</Text>
         {mainButton('Get user token', getUserTokenButtonCallback, {
           container: { marginTop: 70 },
         })}

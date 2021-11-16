@@ -41,7 +41,11 @@ function CustomNavigationBar({ navigation, previous }: StackHeaderProps) {
   );
 }
 
-export function navigation(apiUrl: string, userToken: string): JSX.Element {
+export function navigation(
+  apiUrl: string,
+  userToken: string,
+  setUserToken: React.Dispatch<React.SetStateAction<string>>,
+): JSX.Element {
   return (
     <Provider>
       <NavigationContainer>
@@ -53,7 +57,7 @@ export function navigation(apiUrl: string, userToken: string): JSX.Element {
             ),
           }}
         >
-          {screens(apiUrl, userToken)}
+          {screens(apiUrl, userToken, setUserToken)}
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
