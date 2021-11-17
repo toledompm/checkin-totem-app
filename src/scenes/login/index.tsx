@@ -42,7 +42,7 @@ function login(
           style={{ marginTop: 180 }}
         />
         <Text style={titleTextStyle}>check-in totem</Text>
-        {mainButton('Get user token', getUserTokenButtonCallback, {
+        {mainButton('Get totem token', getUserTokenButtonCallback, {
           container: { marginTop: 70 },
         })}
       </View>
